@@ -621,6 +621,12 @@ export default function CaptivePortal() {
 
           <div className="flex items-center gap-4">
             <Link
+              href="/admin"
+              className="text-slate-400 hover:text-slate-200 transition text-[11px] underline underline-offset-2 flex items-center gap-1"
+            >
+              <span>Admin Dashboard</span>
+            </Link>
+            <Link
               href="/diagnostics"
               className="text-slate-400 hover:text-slate-200 transition text-[11px] underline underline-offset-2 flex items-center gap-1"
             >

@@ -81,8 +81,9 @@ This project is an automated, carrier-grade Wi-Fi Hotspot Billing and Captive Po
 - [x] Walled Garden automated rules builder (whitelisting AzamPay, Selcom, Beem, Apple/Android CNA probes).
 - [x] Router diagnostics and active session manager UI (`/diagnostics`).
 
-#### Phase 4: Admin Dashboard, POS & Voucher Printing
-- [ ] Admin portal with authentication & role-based access.
-- [ ] Batch voucher generator with cryptographic security.
-- [ ] Thermal receipt printer export (58mm / 80mm ESC/POS compatible).
-- [ ] TCRA Compliance log exporter (MAC, assigned IP, phone number, session timestamp).
+#### Phase 4: Admin Dashboard, POS & Voucher Printing (Completed)
+- [x] Admin dashboard with financial metrics (TZS) & telecom settlement breakdown (`/admin`).
+- [x] Cryptographically randomized batch voucher generator (`src/lib/voucher-generator.ts`).
+- [x] Agent commission margin calculator (e.g., 10% kiosk profit margins for neighborhood retailers).
+- [x] Thermal receipt printer layout (58mm / 80mm ESC/POS compatible & A4 printable grid) (`/admin/vouchers/print`).
+- [x] TCRA Compliance & statutory session audit log exporter (CSV export complying with Cybercrimes Act 2015 & EPOCA) (`/api/admin/tcra-export`).
