@@ -48,20 +48,27 @@ An automated, carrier-grade Wi-Fi Hotspot Billing, Captive Portal, and Voucher M
 ```
 WifiBillingBusinessSystem/
 ├── docs/
-│   └── ARCHITECTURE_AND_ROADMAP.md    # Detailed technical architecture & roadmap
+│   ├── ARCHITECTURE_AND_ROADMAP.md             # Detailed technical architecture & roadmap
+│   └── TANZANIA_WIFI_BUSINESS_EXECUTION_MANUAL.md # Ground business guide, hardware BOM & runbook
 ├── src/
-│   ├── app/                           # Next.js App Router (Portal, Admin, APIs)
-│   │   ├── api/                       # Backend API routes (payments, vouchers, hotspot)
-│   │   ├── portal/                    # End-user captive portal
-│   │   └── admin/                     # Administrative analytics & voucher generator
-│   ├── components/                    # Reusable UI components
-│   ├── lib/                           # Core drivers (MikroTik, AzamPay, Selcom, Database)
-│   └── locales/                       # Swahili (sw) & English (en) dictionary strings
-├── public/                            # Static assets, branding, and icons
+│   ├── app/                                    # Next.js App Router (Portal, Admin, Diagnostics, APIs)
+│   │   ├── api/                                # Backend API routes (payments, vouchers, mikrotik, admin)
+│   │   ├── admin/                              # POS revenue analytics & thermal voucher printing
+│   │   └── diagnostics/                        # MikroTik live session & walled garden controls
+│   ├── components/                             # Reusable UI components
+│   ├── lib/                                    # Core drivers (MikroTik, AzamPay, Selcom, Database)
+│   └── locales/                                # Swahili (sw) & English (en) dictionary strings
+├── public/                                     # Static assets, branding, and icons
 ├── package.json
 ├── tailwind.config.js
 └── README.md
 ```
+
+---
+
+## 📖 Essential Documentation
+- **[Business & Field Execution Manual](docs/TANZANIA_WIFI_BUSINESS_EXECUTION_MANUAL.md):** Complete guide to site selection (Hostels, Stendi, Masoko), hardware BOM (~845,000 TZS), TANESCO mini-UPS power resilience, AzamPay/Selcom onboarding, "Duka la Mangi" voucher distribution, and 30-day pilot runbook.
+- **[System Architecture & Technical Roadmap](docs/ARCHITECTURE_AND_ROADMAP.md):** Fullstack technical specification, RouterOS v7 driver design, and TCRA compliance guidelines.
 
 ---
 
