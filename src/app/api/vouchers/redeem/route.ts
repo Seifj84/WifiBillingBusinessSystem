@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { db, activateSession } from '@/lib/mock-db';
 import { WIFI_PACKAGES } from '@/lib/packages';
+import { provisionHotspotAccess } from '@/lib/mikrotik/provisioner';
 
 export async function POST(req: NextRequest) {
   try {
@@ -35,7 +36,7 @@ export async function POST(req: NextRequest) {
     voucher.redeemedAt = new Date().toISOString();
     voucher.redeemedByMac = macAddress || '00:11:22:33:44:55';
 
-    // Activate session
+    // Activate local session
     const session = activateSession({
       userIdentifier: cleanCode,
       packageId: voucher.packageId,
@@ -43,11 +44,20 @@ export async function POST(req: NextRequest) {
       ipAddress: clientIp || '192.168.88.254',
     });
 
-    const pkg = WIFI_PACKAGES.find(p => p.id === voucher.packageId);
+    const pkg = WIFI_PACKAGES.find((p) => p.id === voucher.packageId);
+
+    // Provision onto MikroTik Router
+    await provisionHotspotAccess({
+      username: cleanCode,
+      packageId: voucher.packageId,
+      macAddress: macAddress || '00:11:22:33:44:55',
+      clientIp: clientIp || '192.168.88.254',
+      comment: `Redeemed voucher ${cleanCode}`,
+    });
 
     return NextResponse.json({
       success: true,
-      message: 'Vocha imethibitishwa! Intaneti imewashwa kikamilifu.',
+      message: 'Vocha imethibitishwa! Intaneti imewashwa kikamilifu kwenye MikroTik.',
       package: pkg,
       session,
     });

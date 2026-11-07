@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { 
   Wifi, 
   Smartphone, 
@@ -619,6 +620,12 @@ export default function CaptivePortal() {
           </div>
 
           <div className="flex items-center gap-4">
+            <Link
+              href="/diagnostics"
+              className="text-slate-400 hover:text-slate-200 transition text-[11px] underline underline-offset-2 flex items-center gap-1"
+            >
+              <span>MikroTik Diagnostics</span>
+            </Link>
             <a
               href="https://wa.me/255754000000"
               target="_blank"

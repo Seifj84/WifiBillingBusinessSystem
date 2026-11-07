@@ -73,11 +73,13 @@ This project is an automated, carrier-grade Wi-Fi Hotspot Billing and Captive Po
 - [x] **Webhook Processing & Idempotency:** Guarding against double-spend/duplicate session activations on repeated telco retries (`/api/payments/webhook`).
 - [x] Manual transaction verification fallback endpoint (`/api/payments/verify`).
 
-#### Phase 3: MikroTik RouterOS Gateway Driver
-- [ ] MikroTik REST API (RouterOS v7) connection manager.
-- [ ] Hotspot user add, authenticate, and session expiration trigger.
-- [ ] Walled Garden automated rules builder.
-- [ ] FreeRADIUS integration profile.
+#### Phase 3: MikroTik RouterOS Gateway Driver (Completed)
+- [x] MikroTik REST API (RouterOS v7) connection manager (`src/lib/mikrotik/client.ts`).
+- [x] High-fidelity RouterOS simulator (`src/lib/mikrotik/mock.ts`) for local development without hardware.
+- [x] Hotspot user add, authenticate, and session expiration trigger (`provisionHotspotAccess`).
+- [x] Bandwidth Profile sync (`pkg-tz-1hr`, `pkg-tz-3hr` with rate-limits e.g., `1M/3M`, `2M/4M`, `2M/5M`).
+- [x] Walled Garden automated rules builder (whitelisting AzamPay, Selcom, Beem, Apple/Android CNA probes).
+- [x] Router diagnostics and active session manager UI (`/diagnostics`).
 
 #### Phase 4: Admin Dashboard, POS & Voucher Printing
 - [ ] Admin portal with authentication & role-based access.

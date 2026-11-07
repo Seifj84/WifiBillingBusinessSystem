@@ -3,6 +3,7 @@ import { WIFI_PACKAGES } from '@/lib/packages';
 import { detectTzCarrier, normalizeTzPhone } from '@/lib/telco';
 import { createPayment, db, activateSession } from '@/lib/mock-db';
 import { getPaymentGateway } from '@/lib/payments';
+import { provisionHotspotAccess } from '@/lib/mikrotik/provisioner';
 
 export async function POST(req: NextRequest) {
   try {
@@ -66,7 +67,7 @@ export async function POST(req: NextRequest) {
 
     // In Mock mode, simulate customer entering their PIN on the phone after 4 seconds
     if (gateway.name === 'MockGateway') {
-      setTimeout(() => {
+      setTimeout(async () => {
         const tx = db.transactions.get(payment.id);
         if (tx && tx.status === 'PENDING') {
           tx.status = 'SUCCESS';
@@ -76,6 +77,14 @@ export async function POST(req: NextRequest) {
             packageId: tx.packageId,
             macAddress: tx.macAddress || '00:11:22:33:44:55',
             ipAddress: tx.clientIp || '192.168.88.254',
+          });
+          // Provision onto MikroTik Router
+          await provisionHotspotAccess({
+            username: tx.phone,
+            packageId: tx.packageId,
+            macAddress: tx.macAddress || '00:11:22:33:44:55',
+            clientIp: tx.clientIp || '192.168.88.254',
+            comment: `Auto-simulated payment for ${tx.phone}`,
           });
         }
       }, 4000);

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getPaymentGateway } from '@/lib/payments';
 import { db, activateSession } from '@/lib/mock-db';
+import { provisionHotspotAccess } from '@/lib/mikrotik/provisioner';
 
 export async function POST(req: NextRequest) {
   try {
@@ -53,6 +54,15 @@ export async function POST(req: NextRequest) {
         packageId: matchedTx.packageId,
         macAddress: matchedTx.macAddress || '00:11:22:33:44:55',
         ipAddress: matchedTx.clientIp || '192.168.88.254',
+      });
+
+      // Provision onto MikroTik Hotspot Gateway
+      await provisionHotspotAccess({
+        username: matchedTx.phone,
+        packageId: matchedTx.packageId,
+        macAddress: matchedTx.macAddress || '00:11:22:33:44:55',
+        clientIp: matchedTx.clientIp || '192.168.88.254',
+        comment: `Mobile Money ${matchedTx.telco} Ref: ${matchedTx.reference}`,
       });
 
       console.log(
