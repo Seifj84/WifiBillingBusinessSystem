@@ -1,0 +1,57 @@
+{
+  "app_name": "MtaaWiFi Tanzania",
+  "tagline": "Mtandao wa Kasi na Bei Nafuu Mtaani Kwako",
+  "status_connected_no_internet": "Umeunganishwa kwenye Wi-Fi, unahitaji kifurushi kufungua intaneti.",
+  "status_active": "Kifurushi chako kipo hewani!",
+  "tabs": {
+    "buy": "Nunua Kifurushi",
+    "voucher": "Weka Vocha",
+    "status": "Hali ya Akaunti"
+  },
+  "packages": {
+    "title": "Chagua Kifurushi Chako",
+    "popular": "Inayopendwa Zaidi",
+    "unlimited": "Bila Kikomo",
+    "buy_now": "Lipia Sasa",
+    "speed": "Kasi hadi",
+    "validity": "Muda"
+  },
+  "payment_modal": {
+    "title": "Malipo Kupitia Simu",
+    "step1": "Weka namba yako ya simu ya malipo:",
+    "phone_placeholder": "Mfano: 0754 123 456",
+    "detected_carrier": "Mtandao uliotambuliwa",
+    "amount_to_pay": "Kiasi cha kulipa",
+    "pay_button": "Tuma Ombi la Malipo (Push)",
+    "waiting_title": "Tafadhali kamilisha malipo kwenye simu yako",
+    "waiting_desc": "Ujumbe wa USSD wenye namba ya siri (PIN) umetumwa kwenye simu yako namba {phone}. Weka PIN yako kuthibitisha.",
+    "verifying": "Inathibitisha malipo na kuwasha intaneti...",
+    "success_title": "Hongera! Umefanikiwa!",
+    "success_desc": "Intaneti yako imewashwa sasa. Furahia upepo wa MtaaWiFi!",
+    "failed_title": "Malipo Hayajakamilika",
+    "failed_desc": "Hukuweka PIN au muda umepita. Tafadhali jaribu tena.",
+    "retry": "Jaribu Tena",
+    "close": "Funga"
+  },
+  "voucher_tab": {
+    "title": "Tumia Vocha ya Karatasi / Scratch Card",
+    "subtitle": "Kama umenunua vocha kwa wakala au dukani, weka nambari hapa chini:",
+    "input_placeholder": "Weka nambari ya vocha (mfano: TZ-9842-AB)",
+    "redeem_button": "Washa Intaneti Sasa",
+    "agent_note": "Je, unahitaji vocha? Zinapatikana duka la jirani na kwa mawakala wetu mtaani."
+  },
+  "status_tab": {
+    "title": "Kagua Hali ya Kifurushi Chako",
+    "subtitle": "Ingiza namba yako ya simu au kadi uone muda uliosalia:",
+    "check_button": "Angalia Hali",
+    "time_left": "Muda Uliobaki",
+    "data_used": "Data Iliyotumika",
+    "expires_at": "Itaisha",
+    "mac_address": "Kifaa (MAC)"
+  },
+  "footer": {
+    "support": "Msaada / Huduma kwa Wateja",
+    "whatsapp": "Wasiliana nasi WhatsApp",
+    "powered_by": "MtaaWiFi Hotspot Network • TCRA Compliant Service"
+  }
+}

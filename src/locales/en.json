@@ -1,0 +1,57 @@
+{
+  "app_name": "MtaaWiFi Tanzania",
+  "tagline": "Fast, High-Speed & Affordable Neighborhood Internet",
+  "status_connected_no_internet": "Connected to Wi-Fi. Choose a bundle or enter a voucher to activate internet.",
+  "status_active": "Your internet bundle is active!",
+  "tabs": {
+    "buy": "Buy Package",
+    "voucher": "Enter Voucher",
+    "status": "Check Status"
+  },
+  "packages": {
+    "title": "Select Your Internet Package",
+    "popular": "Most Popular",
+    "unlimited": "Unlimited",
+    "buy_now": "Pay Now",
+    "speed": "Speed up to",
+    "validity": "Validity"
+  },
+  "payment_modal": {
+    "title": "Mobile Money Payment",
+    "step1": "Enter your mobile money phone number:",
+    "phone_placeholder": "e.g. 0754 123 456",
+    "detected_carrier": "Detected Network",
+    "amount_to_pay": "Amount to pay",
+    "pay_button": "Send Payment Request (USSD Push)",
+    "waiting_title": "Please complete the prompt on your phone",
+    "waiting_desc": "A USSD PIN authorization prompt has been sent to your phone {phone}. Enter your PIN to confirm.",
+    "verifying": "Verifying transaction and activating internet access...",
+    "success_title": "Payment Successful!",
+    "success_desc": "Your high-speed internet has been activated. Enjoy MtaaWiFi!",
+    "failed_title": "Payment Incomplete",
+    "failed_desc": "No PIN was entered or the request timed out. Please try again.",
+    "retry": "Try Again",
+    "close": "Close"
+  },
+  "voucher_tab": {
+    "title": "Redeem Scratch Voucher / Thermal Ticket",
+    "subtitle": "If you bought a voucher from a local agent or shop, enter the code below:",
+    "input_placeholder": "Enter voucher code (e.g. TZ-9842-AB)",
+    "redeem_button": "Activate Internet Now",
+    "agent_note": "Need a physical voucher? Available at nearby stationery shops and local agent kiosks."
+  },
+  "status_tab": {
+    "title": "Check Your Active Subscription",
+    "subtitle": "Enter your phone number or voucher code to view remaining validity:",
+    "check_button": "Check Status",
+    "time_left": "Time Remaining",
+    "data_used": "Data Transferred",
+    "expires_at": "Expires At",
+    "mac_address": "Device (MAC)"
+  },
+  "footer": {
+    "support": "Customer Support",
+    "whatsapp": "Chat with Support on WhatsApp",
+    "powered_by": "MtaaWiFi Hotspot Network • TCRA Compliant Service"
+  }
+}
