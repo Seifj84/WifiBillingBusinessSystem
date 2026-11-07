@@ -57,7 +57,7 @@ This project is an automated, carrier-grade Wi-Fi Hotspot Billing and Captive Po
 
 ### 3. Implementation Phases
 
-#### Phase 1: Captive Portal & Web Application Core (Current Focus)
+#### Phase 1: Captive Portal & Web Application Core (Completed)
 - [x] Next.js 14 + Tailwind CSS responsive portal application.
 - [x] Bilingual localization (Kiswahili & English).
 - [x] Package catalog with Tanzanian pricing tiers (500 TZS 1hr, 1,000 TZS 3hrs, 2,000 TZS 24hrs, etc.).
@@ -65,11 +65,13 @@ This project is an automated, carrier-grade Wi-Fi Hotspot Billing and Captive Po
 - [x] Voucher redemption modal and verification engine.
 - [x] Active session status checker.
 
-#### Phase 2: Tanzanian Payment Gateways Integration
-- [ ] AzamPay Checkout & USSD Push integration.
-- [ ] Selcom APIGW integration.
-- [ ] Webhook receiver with cryptographic signature validation.
-- [ ] Fallback polling for manual transaction confirmations.
+#### Phase 2: Tanzanian Payment Gateways Integration (Completed)
+- [x] Unified `IPaymentGateway` abstraction layer and gateway factory (`src/lib/payments/`).
+- [x] **AzamPay Gateway Driver:** Token caching, MNO USSD Push (`/azampay/mno/checkout`), and webhook verification.
+- [x] **Selcom APIGW Driver:** HMAC-SHA256 signature generation, order creation (`/v1/checkout/create-order-minimal`), and callback verification.
+- [x] **Mock Gateway Driver:** Sandbox simulation with auto-settlement and test failure triggers.
+- [x] **Webhook Processing & Idempotency:** Guarding against double-spend/duplicate session activations on repeated telco retries (`/api/payments/webhook`).
+- [x] Manual transaction verification fallback endpoint (`/api/payments/verify`).
 
 #### Phase 3: MikroTik RouterOS Gateway Driver
 - [ ] MikroTik REST API (RouterOS v7) connection manager.

@@ -532,6 +532,27 @@ export default function CaptivePortal() {
                 <div className="bg-amber-50 border border-amber-200 text-amber-800 text-xs p-3 rounded-xl">
                   {t.payment_modal.verifying}
                 </div>
+                {/* Manual Check Button for delayed USSD prompts */}
+                <div className="pt-2">
+                  <button
+                    onClick={async () => {
+                      if (!paymentTxId) return;
+                      try {
+                        const res = await fetch(`/api/payments/status?id=${paymentTxId}`);
+                        const data = await res.json();
+                        if (data.status === 'SUCCESS') {
+                          setPaymentStep('SUCCESS');
+                          if (data.session) setActiveSession(data.session);
+                        }
+                      } catch (e) {
+                        console.error(e);
+                      }
+                    }}
+                    className="text-xs text-emerald-700 hover:text-emerald-800 font-semibold underline underline-offset-2"
+                  >
+                    Nimeshaweka PIN? Kagua Malipo Sasa
+                  </button>
+                </div>
               </div>
             )}
 
